@@ -1,0 +1,67 @@
+<html>
+<head>
+<script language="javascript">
+function
+day_title(day_name)
+{
+document.write("<td align=center width=30 bgcolor=green><b>"+day_name+"</b></td>");
+}
+function fill_table(month,month_len)
+{
+day=1;
+document.write("<table border=1 cellspacing=2 cellpadding=3%>");
+document.write("<td colspan=7 align=center bgcolor=yellow> <b>"+month+" "+year+"</b><tr>");
+day_title("sun"); 
+day_title("mon");
+day_title("tue");
+day_title("wed");
+day_title("thu");
+day_title("fri");
+day_title("sat");
+document.write("</tr> <tr>");
+for(var i=1;i<start_day;i++)
+{
+document.write("<td>");
+}
+for(var i=start_day;i<8;i++)
+{
+document.write("<td align=center bgcolor=orange>"+day+"</td>");
+day++;
+}
+document.write("<tr>");
+while(day<=month_len)
+{
+for(var i=1;i<=7 && day<=month_len;i++)
+{
+document.write("<td align=center bgcolor=orange>"+day+"</td>");
+day++;
+}
+document.write("<tr>");
+start_day=i;
+}
+document.write("<tr> </table> <br>");
+}
+year=prompt("enter the year",2020);
+today=new Date("january 1,"+year);
+start_day=today.getDay()+1;
+fill_table("january",31);
+if(year%4==0)
+fill_table("february",29);
+else
+fill_table("february",28);
+fill_table("march",31);
+fill_table("april",30);
+fill_table("may",31);
+fill_table("june",30);
+fill_table("july",31);
+fill_table("august",31);
+fill_table("september",30);
+fill_table("october",31);
+fill_table("november",30);
+fill_table("december",31);
+</script>
+</head>
+</html>
+
+
+
